@@ -1,15 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>What is your name?</div>
+  <input v-model="name" />
+  <div v-if="name.length > 0">Hello, {{name}}{{maybeDecoration}}!</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  data: function () {
+    return {
+      name: "Friend"
+    };
+  },
+  computed: {
+    maybeDecoration: function () {
+      var nameLowercase = this.name.toLowerCase();
+      if (nameLowercase === "chrissy" || nameLowercase === "christina"){
+        return "♥";
+      }
+      return "";
+    }
   }
 }
 </script>
