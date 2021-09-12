@@ -1,7 +1,7 @@
 <template>
   <div>What is your name?</div>
   <input v-model="name" />
-  <div v-if="name.length > 0">Hello, {{name}}{{maybeDecoration}}!</div>
+  <div v-if="name.length > 0">Hello, {{ name }}{{ maybeDecoration }}!</div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
   computed: {
     maybeDecoration: function () {
       var nameLowercase = this.name.toLowerCase();
-      if (nameLowercase === "chrissy" || nameLowercase === "christina"){
+      if (nameLowercase === "chrissy" || nameLowercase === "christina") {
         return "♥";
       }
       return "";
